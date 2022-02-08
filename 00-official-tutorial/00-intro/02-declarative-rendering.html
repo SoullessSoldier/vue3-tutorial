@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 intro - declarative rendering</title>
+    <script src="../../cdn/vue.global.js"></script>
+</head>
+<body>
+    <div id="bind-attribute">
+        <span v-bind:title="message">
+            Наведи на меня курсор на пару секунд, чтобы
+            увидеть динамически связанное значение title!
+        </span>
+    </div>
+    <script>
+        const AttributeBinding = {
+            data(){
+                return {
+                    message: 'Страница загружена за ' + new Date().toLocaleString(),
+                }
+            }
+        };
+        Vue.createApp(AttributeBinding).mount('#bind-attribute')
+    </script>
+</body>
+</html>
